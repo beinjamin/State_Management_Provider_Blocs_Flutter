@@ -36,7 +36,9 @@ class _CounterPageState extends State<CounterPage> {
           FloatingActionButton(
               child: Icon(Icons.remove),
               onPressed: () {
-                --counter;
+                setState(() {
+                  --counter;
+                });
               }),
           SizedBox(
             width: 10,
@@ -44,7 +46,9 @@ class _CounterPageState extends State<CounterPage> {
           FloatingActionButton(
               child: Icon(Icons.add),
               onPressed: () {
-                ++counter;
+                setState(() {
+                  ++counter;
+                });
               }),
         ],
       ),
