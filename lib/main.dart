@@ -12,8 +12,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class CounterPage extends StatelessWidget {
+class CounterPage extends StatefulWidget {
+  @override
+  State<CounterPage> createState() => _CounterPageState();
+}
+
+class _CounterPageState extends State<CounterPage> {
   int counter = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
