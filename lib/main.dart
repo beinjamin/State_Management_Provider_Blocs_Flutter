@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-void main() => MyApp();
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(primarySwatch: Colors.blue),
       routes: {"/": (context) => CounterPage()},
     );
   }
@@ -20,10 +21,22 @@ class CounterPage extends StatelessWidget {
         title: Text('Counter'),
       ),
       body: Center(
-        child: Text('Counter Value => $counter'),
+        child: Text('Counter Value => $counter',
+            style: Theme.of(context).textTheme.headline4),
       ),
       floatingActionButton: Row(
-        children: [FloatingActionButton(onPressed: null)],
+        children: [
+          FloatingActionButton(
+              child: Icon(Icons.remove),
+              onPressed: () {
+                --counter;
+              }),
+          FloatingActionButton(
+              child: Icon(Icons.add),
+              onPressed: () {
+                ++counter;
+              }),
+        ],
       ),
     );
   }
