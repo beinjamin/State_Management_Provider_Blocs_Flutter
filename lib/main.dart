@@ -25,12 +25,16 @@ class CounterPage extends StatelessWidget {
             style: Theme.of(context).textTheme.headline4),
       ),
       floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
               child: Icon(Icons.remove),
               onPressed: () {
                 --counter;
               }),
+          SizedBox(
+            width: 10,
+          ),
           FloatingActionButton(
               child: Icon(Icons.add),
               onPressed: () {
